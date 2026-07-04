@@ -1,0 +1,332 @@
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background: #f1ebdf;
+  color: #1c1711;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(215, 132, 53, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(42, 111, 103, 0.14), transparent 24%),
+    linear-gradient(180deg, #f5efe5 0%, #ebe1d1 100%);
+}
+
+.page-shell {
+  width: min(1180px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+
+.hero-panel,
+.workbench,
+.trace-column,
+.seat-card,
+.metric-card,
+.prompt-shell {
+  background: rgba(255, 252, 246, 0.88);
+  border: 1px solid rgba(92, 71, 51, 0.16);
+  border-radius: 24px;
+  box-shadow: 0 18px 60px rgba(92, 71, 51, 0.12);
+}
+
+.hero-panel {
+  padding: 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.85fr);
+  gap: 18px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: #7d5b41;
+}
+
+.hero-panel h1,
+.trace-column h2,
+.seat-card h2,
+.sample-prompts h2 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.hero-panel h1 {
+  margin: 8px 0 12px;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 0.95;
+}
+
+.lede {
+  max-width: 720px;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.hero-aside,
+.seat-grid,
+.overview-strip,
+.prompt-chip-row,
+.workbench,
+.trace-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-aside {
+  align-content: stretch;
+}
+
+.mode-card {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 250, 243, 0.95), rgba(243, 235, 222, 0.92));
+  border: 1px solid rgba(92, 71, 51, 0.14);
+}
+
+.mode-pill,
+.seat-state {
+  justify-self: start;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #efe2cf;
+  color: #7a573c;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.seat-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 24px;
+}
+
+.seat-card {
+  padding: 20px;
+  display: grid;
+  gap: 14px;
+}
+
+.seat-card header {
+  display: grid;
+  gap: 10px;
+}
+
+.seat-card h2,
+.sample-prompts h2,
+.trace-column h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.seat-running {
+  border-color: rgba(47, 108, 102, 0.36);
+  box-shadow: 0 24px 70px rgba(47, 108, 102, 0.18);
+}
+
+.seat-done {
+  border-color: rgba(204, 133, 67, 0.28);
+}
+
+.speaking-indicator,
+.seat-placeholder {
+  border-top: 1px solid rgba(92, 71, 51, 0.1);
+  padding-top: 14px;
+  font-weight: 600;
+}
+
+.speaking-indicator {
+  color: #2f6c66;
+}
+
+.seat-placeholder {
+  color: #7d7263;
+}
+
+.overview-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.metric-card {
+  padding: 16px 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.metric-card span {
+  color: #7a634d;
+  font-size: 0.88rem;
+}
+
+.metric-card strong {
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+
+.prompt-shell {
+  margin-top: 18px;
+  padding: 20px 24px;
+}
+
+.sample-prompts {
+  display: grid;
+  gap: 14px;
+}
+
+.prompt-chip-row {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.prompt-chip {
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(92, 71, 51, 0.16);
+  background: #fffdf9;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.support-copy {
+  margin: 0;
+  color: #6e6254;
+  line-height: 1.55;
+}
+
+.workbench {
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+  margin-top: 18px;
+  padding: 24px;
+}
+
+.prompt-form {
+  display: grid;
+  gap: 12px;
+}
+
+.prompt-form label {
+  font-weight: 600;
+}
+
+.prompt-form textarea {
+  width: 100%;
+  resize: vertical;
+  border-radius: 18px;
+  border: 1px solid rgba(92, 71, 51, 0.22);
+  padding: 16px;
+  font: inherit;
+  background: #fffdf9;
+}
+
+.prompt-form button {
+  justify-self: start;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 20px;
+  font: inherit;
+  font-weight: 700;
+  background: #2f6c66;
+  color: white;
+  cursor: pointer;
+}
+
+.prompt-form button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.status-panel {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.status-chip {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: #efe6d7;
+  border: 1px solid rgba(92, 71, 51, 0.14);
+}
+
+.status-chip.muted {
+  color: #6e6254;
+}
+
+.download-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: #1e1a16;
+  color: #fff8ef;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.trace-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 24px;
+}
+
+.trace-column {
+  padding: 22px;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.event-list li,
+.final-panel {
+  border-radius: 18px;
+  padding: 14px;
+  background: #fffdf9;
+  border: 1px solid rgba(92, 71, 51, 0.14);
+}
+
+.empty-state {
+  color: #6e6254;
+}
+
+.final-panel {
+  min-height: 220px;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+}
+
+.error-copy {
+  color: #9f1f1f;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .hero-panel,
+  .seat-grid,
+  .overview-strip,
+  .workbench,
+  .trace-grid {
+    grid-template-columns: 1fr;
+  }
+}

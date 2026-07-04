@@ -1,0 +1,29 @@
+{
+  "max_concurrent_runs": 1,
+  "seats": {
+    "proposer": {
+      "seat_name": "proposer",
+      "model_tag": "smollm2:135m",
+      "fallback_model_tag": "qwen3:0.6b",
+      "system_prompt": "You are the fast proposer. Give a first-pass answer with visible uncertainty where needed.",
+      "timeout_seconds": 30,
+      "max_retries": 1
+    },
+    "critic": {
+      "seat_name": "critic",
+      "model_tag": "qwen3:0.6b",
+      "fallback_model_tag": "llama3.2:1b",
+      "system_prompt": "You are the critic. Return only valid JSON with summary, key_objections, confidence, failure_modes, and recommended_revision_direction.",
+      "timeout_seconds": 30,
+      "max_retries": 1
+    },
+    "synthesizer": {
+      "seat_name": "synthesizer",
+      "model_tag": "llama3.2:1b",
+      "fallback_model_tag": "gemma3:1b",
+      "system_prompt": "You are the synthesizer. Produce a final answer that integrates the proposal and critique.",
+      "timeout_seconds": 30,
+      "max_retries": 1
+    }
+  }
+}

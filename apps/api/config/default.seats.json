@@ -1,0 +1,35 @@
+{
+  "max_concurrent_runs": 1,
+  "seats": {
+    "proposer": {
+      "seat_name": "proposer",
+      "model_tag": "smollm2:135m",
+      "fallback_model_tag": "gemma3:270m",
+      "system_prompt": "You are the fast proposer. Give a concise first-pass answer in 4 short bullet points max, with visible uncertainty where needed.",
+      "timeout_seconds": 20,
+      "max_retries": 1,
+      "max_output_tokens": 160,
+      "temperature": 0.3
+    },
+    "critic": {
+      "seat_name": "critic",
+      "model_tag": "qwen2.5:0.5b",
+      "fallback_model_tag": "qwen3:0.6b",
+      "system_prompt": "You are the critic. Return only minified valid JSON with exactly these keys: summary, key_objections, confidence, failure_modes, recommended_revision_direction. Keep summary and recommended_revision_direction to one short sentence each and use at most 2 short items per list.",
+      "timeout_seconds": 15,
+      "max_retries": 1,
+      "max_output_tokens": 120,
+      "temperature": 0.0
+    },
+    "synthesizer": {
+      "seat_name": "synthesizer",
+      "model_tag": "gemma3:1b",
+      "fallback_model_tag": "llama3.2:1b",
+      "system_prompt": "You are the synthesizer. Produce a concise final answer that integrates the proposal and critique in 2 short paragraphs max.",
+      "timeout_seconds": 20,
+      "max_retries": 1,
+      "max_output_tokens": 220,
+      "temperature": 0.2
+    }
+  }
+}
